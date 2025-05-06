@@ -119,6 +119,18 @@ python -m pip install --quiet --no-cache-dir kaolin==0.15.0 -f https://nvidia-ka
 # PyTorch3D
 python -m pip install --quiet --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py39_cu118_pyt200/download.html
 
+If encounter:
+error: parameter packs not expanded with ‘...’
+
+Run these before building extensions
+
+$ sudo apt install gcc-10 g++-10
+$ export CC=/usr/bin/gcc-10
+$ export CXX=/usr/bin/g++-10
+$ export CUDA_ROOT=/usr/local/cuda
+$ ln -s /usr/bin/gcc-10 $CUDA_ROOT/bin/gcc
+$ ln -s /usr/bin/g++-10 $CUDA_ROOT/bin/g++
+
 # Build extensions
 CMAKE_PREFIX_PATH=$CONDA_PREFIX/lib/python3.9/site-packages/pybind11/share/cmake/pybind11 bash build_all_conda.sh
 ```
