@@ -156,3 +156,8 @@ data/
 logs/
 !BundleTrack/XMem/inference/data
 run_used.yml
+
+# Third-party libraries
+eigen*/
+nvdiffrast/
+pybind11/
